@@ -353,6 +353,100 @@
         </div>
     </section>
 
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-black text-center mb-10 text-slate-900 tracking-tight">
+                Tanya Jawab (FAQ)
+            </h2>
+
+            <div class="space-y-4">
+                <div class="border border-slate-100 rounded-2xl shadow-sm overflow-hidden bg-white">
+                    <button class="faq-btn w-full flex justify-between items-center p-6 text-left text-slate-800 font-bold md:text-lg transition hover:bg-slate-50/50">
+                        <span>Apakah ini aplikasi sekali bayar?</span>
+                        <svg class="faq-icon w-5 h-5 text-slate-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out bg-slate-50/30">
+                        <p class="p-6 text-slate-600 leading-relaxed pt-0 border-t border-slate-50">
+                            Ya, betul sekali! Anda hanya perlu membayar **satu kali saja (Rp 79.000)** saat promo berlangsung dan Anda akan langsung mendapatkan akses lisensi selamanya tanpa perlu pusing memikirkan biaya langganan bulanan atau tahunan.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border border-slate-100 rounded-2xl shadow-sm overflow-hidden bg-white">
+                    <button class="faq-btn w-full flex justify-between items-center p-6 text-left text-slate-800 font-bold md:text-lg transition hover:bg-slate-50/50">
+                        <span>Apakah butuh spesifikasi PC/Laptop tinggi?</span>
+                        <svg class="faq-icon w-5 h-5 text-slate-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out bg-slate-50/30">
+                        <p class="p-6 text-slate-600 leading-relaxed pt-0 border-t border-slate-50">
+                            Tidak sama sekali. Karena Edu-VGen Pro berbasis *cloud system* (berjalan di browser), seluruh proses komputasi berat dan rendering video dilakukan oleh server AI kami. Laptop jadul, Chromebook, bahkan HP Anda pun bisa menggunakannya dengan lancar asalkan terhubung ke internet.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border border-slate-100 rounded-2xl shadow-sm overflow-hidden bg-white">
+                    <button class="faq-btn w-full flex justify-between items-center p-6 text-left text-slate-800 font-bold md:text-lg transition hover:bg-slate-50/50">
+                        <span>Apakah suara AI terdengar kaku seperti robot?</span>
+                        <svg class="faq-icon w-5 h-5 text-slate-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out bg-slate-50/30">
+                        <p class="p-6 text-slate-600 leading-relaxed pt-0 border-t border-slate-50">
+                            Sama sekali tidak. Teknologi *Natural Human Voice AI* kami telah dioptimalkan khusus untuk aksen dan intonasi lokal Indonesia yang ramah, sehingga terdengar alami, memiliki jeda nafas yang tepat, dan sangat nyaman didengar oleh siswa layaknya penjelasan dari guru manusia asli.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border border-slate-100 rounded-2xl shadow-sm overflow-hidden bg-white">
+                    <button class="faq-btn w-full flex justify-between items-center p-6 text-left text-slate-800 font-bold md:text-lg transition hover:bg-slate-50/50">
+                        <span>Bisa render video format HP (Vertikal)?</span>
+                        <svg class="faq-icon w-5 h-5 text-slate-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out bg-slate-50/30">
+                        <p class="p-6 text-slate-600 leading-relaxed pt-0 border-t border-slate-50">
+                            Bisa banget! Fitur Multi-Rasio kami memungkinkan Anda menghasilkan video dalam format Landscape (16:9) yang cocok untuk layar kelas/proyektor, maupun format Vertikal/Portrait (9:16) yang siap diunggah langsung ke TikTok, YouTube Shorts, atau Instagram Reels.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('.faq-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('.faq-icon');
+                
+                // Cek apakah item yang diklik sudah terbuka
+                const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+                
+                // Tutup semua FAQ terlebih dahulu (opsional, jika ingin sistem accordion tunggal)
+                document.querySelectorAll('.faq-content').forEach(c => {
+                    c.style.maxHeight = '0px';
+                    c.style.opacity = '0';
+                });
+                document.querySelectorAll('.faq-icon').forEach(i => {
+                    i.classList.remove('rotate-180');
+                });
+
+                // Jika sebelumnya tertutup, maka buka item yang diklik
+                if (!isOpen) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    content.style.opacity = "1";
+                    icon.classList.add('rotate-180');
+                }
+            });
+        });
+    </script>
+
     <section class="py-12 px-4 bg-white text-center border-b border-slate-200">
         <div class="max-w-xl mx-auto">
             <img src="https://cdn.phototourl.com/free/2026-05-24-5c05a390-68f1-4346-a587-81c4947422f7.png" alt="Garansi 100% Uang Kembali" class="mx-auto mb-4 w-20 h-20 object-contain">
@@ -371,6 +465,8 @@
             Miliki Sekarang Juga — Rp 79rb 🚀
         </a>
     </div>
+
+    
 
 </body>
 </html>
